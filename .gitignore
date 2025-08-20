@@ -1,0 +1,21 @@
+# Build files
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+build-log.txt
+
+# IDE files
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Log files
+*.log
+
+# Outros
+.mvn/
