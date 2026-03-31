@@ -1,0 +1,9 @@
+CREATE TABLE Nota_Fiscal(
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    numero VARCHAR(255) NOT NULL UNIQUE,
+    emissor VARCHAR(255) NOT NULL,
+    valor DECIMAL NOT NULL,
+    data_emissao DATE NOT NULL,
+    data_vencimento DATE NOT NULL,
+    paga BOOLEAN DEFAULT FALSE
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
