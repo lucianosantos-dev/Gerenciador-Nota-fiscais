@@ -1,6 +1,7 @@
 package com.example.Gerenciador_Nota_fiscal.services;
 
 import com.example.Gerenciador_Nota_fiscal.entities.NotaFiscal;
+import com.example.Gerenciador_Nota_fiscal.repositories.NotaFiscalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
@@ -10,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class OrganizadorDeNotasEmMemoria implements OrganizadorDeNotas {
+public class OrganizadorDeNotasEmMemoria {
 
     private final NotaFiscalRepository notaFiscalRepository;
 
