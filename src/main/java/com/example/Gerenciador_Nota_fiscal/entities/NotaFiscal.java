@@ -1,99 +1,39 @@
 package com.example.Gerenciador_Nota_fiscal.entities;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
 @Entity
-@Table(name = "nota_fiscal")
+@Table(name = "Nota_Fiscal")
 public class NotaFiscal {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(unique = true, nullable = false)
+    @Column(name = "numero", length = 255, unique = true, nullable = false)
     private String numero;
 
+    @Column(name = "emissor", length = 255, nullable = false)
     private String emissor;
+
+    @Column(name = "valor", nullable = false)
     private BigDecimal valor;
 
-    @Column(columnDefinition = "DATE")
+    @Column(name = "data_emissao", nullable = false)
     private LocalDate dataEmissao;
 
-    @Column(columnDefinition = "DATE")
+    @Column(name = "data_vencimento", nullable = false)
     private LocalDate dataVencimento;
 
+    @Column(name = "paga")
     private boolean paga;
-
-    public NotaFiscal() {
-        this.paga = false;
-    }
-
-    public NotaFiscal(String numero, String emissor, BigDecimal valor, LocalDate dataEmissao, LocalDate dataVencimento) {
-        this.numero = numero;
-        this.emissor = emissor;
-        this.valor = valor;
-        this.dataEmissao = dataEmissao;
-        this.dataVencimento = dataVencimento;
-        this.paga = false;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getNumero() {
-        return numero;
-    }
-
-    public void setNumero(String numero) {
-        this.numero = numero;
-    }
-
-    public String getEmissor() {
-        return emissor;
-    }
-
-    public void setEmissor(String emissor) {
-        this.emissor = emissor;
-    }
-
-    public BigDecimal getValor() {
-        return valor;
-    }
-
-    public void setValor(BigDecimal valor) {
-        this.valor = valor;
-    }
-
-    public LocalDate getDataEmissao() {
-        return dataEmissao;
-    }
-
-    public void setDataEmissao(LocalDate dataEmissao) {
-        this.dataEmissao = dataEmissao;
-    }
-
-    public LocalDate getDataVencimento() {
-        return dataVencimento;
-    }
-
-    public void setDataVencimento(LocalDate dataVencimento) {
-        this.dataVencimento = dataVencimento;
-    }
-
-    public boolean isPaga() {
-        return paga;
-    }
-
-    public void setPaga(boolean paga) {
-        this.paga = paga;
-    }
-
-    // Métodos equals, hashCode e toString são importantes mas omitidos por brevidade
 }
