@@ -16,11 +16,9 @@ import java.util.Optional;
 public class NotaFiscalController {
 
     private final NotaFiscalService service;
-    private final NotaFiscalMapper mapper;
 
-    public NotaFiscalController(NotaFiscalService service, NotaFiscalMapper mapper) {
+    public NotaFiscalController(NotaFiscalService service) {
         this.service = service;
-        this.mapper = mapper;
     }
 
 
