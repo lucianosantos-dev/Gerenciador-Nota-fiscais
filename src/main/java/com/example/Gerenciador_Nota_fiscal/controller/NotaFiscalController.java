@@ -1,10 +1,8 @@
 package com.example.Gerenciador_Nota_fiscal.controller;
 
 import com.example.Gerenciador_Nota_fiscal.dtos.NotaFiscalDto;
-import com.example.Gerenciador_Nota_fiscal.mappers.NotaFiscalMapper;
 import com.example.Gerenciador_Nota_fiscal.services.NotaFiscalService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
@@ -12,7 +10,7 @@ import java.net.URI;
 import java.util.List;
 import java.util.Optional;
 
-@Controller
+@RestController
 public class NotaFiscalController {
 
     private final NotaFiscalService service;
